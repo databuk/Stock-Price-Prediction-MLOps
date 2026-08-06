@@ -1,0 +1,14 @@
+pandas 
+mlflow
+notebook
+numpy
+scikit-learn
+matplotlib
+python-box==6.0.2
+pyYAML
+tqdm
+ensure
+joblib
+types-PyYAML
+setuptools
+-e .
