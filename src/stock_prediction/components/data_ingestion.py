@@ -1,8 +1,8 @@
 import yfinance as yf
 from stock_prediction import logger
 import pandas as pd
-from src.stock_prediction.entity.config_entity import DataIngestionConfig
-from src.stock_prediction.utils.common import save_csv
+from stock_prediction.entity.config_entity import DataIngestionConfig
+from stock_prediction.utils.common import save_csv
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):

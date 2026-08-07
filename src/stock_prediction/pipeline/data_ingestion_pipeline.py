@@ -1,8 +1,8 @@
 
 from joblib import logger
 
-from src.stock_prediction.config.configuration import ConfigurationManager
-from src.stock_prediction.components.data_ingestion import DataIngestion
+from stock_prediction.config.configuration import ConfigurationManager
+from stock_prediction.components.data_ingestion import DataIngestion
 
 
 STAGE_NAME = "Data Ingestion Pipeline"
