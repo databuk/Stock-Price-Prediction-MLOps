@@ -11,4 +11,6 @@ ensure
 joblib
 types-PyYAML
 setuptools
+yfinance
+ytest
 -e .

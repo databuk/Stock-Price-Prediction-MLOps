@@ -9,6 +9,7 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 from sklearn.base import BaseEstimator
+import pandas as pd
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -75,6 +76,21 @@ def load_json(path: Path) -> ConfigBox:
         return ConfigBox(data)
     except Exception as e:
         logger.error(f"Error loading JSON file from {path}: {e}")
+        raise e
+ 
+@ensure_annotations   
+def save_csv(data: pd.DataFrame, file_path: Path):
+    """Saves the DataFrame to a CSV file.
+
+    Args:
+        data (pd.DataFrame): The DataFrame to save.
+        file_path (Path): The path where the CSV file will be saved.
+    """
+    try:
+        data.to_csv(file_path, index=False)
+        logger.info(f"Data saved to {file_path}")
+    except Exception as e:
+        logger.error(f"Error saving data to {file_path}: {e}")
         raise e
     
 
