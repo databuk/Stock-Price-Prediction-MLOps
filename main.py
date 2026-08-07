@@ -1,5 +1,5 @@
-from src.stock_prediction import logger
-from src.stock_prediction.pipeline.data_ingestion_pipeline import DataIngestionPipeline
+from stock_prediction import logger
+from stock_prediction.pipeline.data_ingestion_pipeline import DataIngestionPipeline
 
 
 STAGE_NAME = "Data Ingestion Pipeline"
