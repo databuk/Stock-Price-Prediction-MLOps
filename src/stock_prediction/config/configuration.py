@@ -4,9 +4,10 @@ from src.stock_prediction.entity.config_entity import *
 
 
 class ConfigurationManager:
-    def __init__(self, config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH):
+    def __init__(self, config_filepath=CONFIG_FILE_PATH, schema_filepath=SCHEMA_FILE_PATH, params_filepath=PARAMS_FILE_PATH):
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
+        self.schema = read_yaml(schema_filepath)
         create_directories([self.config.artifacts_root])
     
     def get_data_ingestion_config(self) -> DataIngestionConfig:
@@ -22,3 +23,16 @@ class ConfigurationManager:
             end_date=config.end_date
         )
         return data_ingestion_config
+    
+    def get_data_validation_config(self):
+        config = self.config.data_validation
+        schema = self.schema.columns
+        create_directories([config.root_dir])
+        data_validation_config = DataValidationConfig(
+            root_dir=config.root_dir,
+            raw_data_file=Path(config.raw_data_file),
+            status_file=Path(config.status_file),
+            ge_expectation_suite=config.ge_expectation_suite,
+            all_schema=schema
+        )
+        return data_validation_config
