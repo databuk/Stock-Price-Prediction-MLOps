@@ -1,0 +1,130 @@
+{
+  "expectations": [
+    {
+      "id": "f7ab1d2c-3873-4a44-b124-c0d74fc080bc",
+      "kwargs": {
+        "column_set": [
+          "Date",
+          "Close",
+          "High",
+          "Low",
+          "Open",
+          "Volume"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "da253a47-5767-407d-8341-a1fccf97c535",
+      "kwargs": {
+        "column": "Date"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "4338dce3-f006-4f0d-8203-c39384321c55",
+      "kwargs": {
+        "column": "Close"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f2fe9a7c-5c52-4140-8d44-933648ff9a9a",
+      "kwargs": {
+        "column": "High"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "b699c918-166b-4efb-b08c-8bb96eabe175",
+      "kwargs": {
+        "column": "Low"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "06d24e4c-324a-4509-9c97-a1deaaece1ec",
+      "kwargs": {
+        "column": "Open"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0d435032-0283-4aa3-9637-333df195b5e9",
+      "kwargs": {
+        "column": "Volume"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "bfc368d6-063d-4a9e-8cce-000d079df5e4",
+      "kwargs": {
+        "column": "Close",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "8bc6f32c-dca0-4c47-bcd8-8e3172491050",
+      "kwargs": {
+        "column": "High",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "aac9298d-b348-43a7-ac2f-962027f09f66",
+      "kwargs": {
+        "column": "Low",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "69a19654-d15a-4353-804c-df19b3d9e164",
+      "kwargs": {
+        "column": "Open",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "37d61e3c-4177-4c7d-8f09-2b8819b7ab62",
+      "kwargs": {
+        "column": "Volume",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "4a49709d-6bfa-484e-abd0-88809f4aacd4",
+  "meta": {
+    "great_expectations_version": "1.20.0"
+  },
+  "name": "stock_expectation_suite",
+  "notes": null
+}

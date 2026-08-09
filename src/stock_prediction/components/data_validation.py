@@ -11,7 +11,8 @@ class DataValidation:
         try:
             data = pd.read_csv(self.config.raw_data_file, parse_dates=["Date"])
             columns = list(data.columns)
-            context = gx.get_context()
+            context = gx.get_context(mode="file", project_root_dir=".")
+            
             data_source = context.data_sources.add_pandas("stock_data_source")
             data_asset = data_source.add_dataframe_asset(name="stock_data_asset")
             batch_definition = data_asset.add_batch_definition_whole_dataframe("stock_data_batch")
@@ -45,9 +46,27 @@ class DataValidation:
                         )
                     
             context.suites.add_or_update(suite)
-
-            results = batch.validate(suite)
-            validation_status = bool(results.success)
+            validation_definition = context.validation_definitions.add(
+                gx.ValidationDefinition(
+                    name="stock_data_validation_definition",
+                    data=batch_definition,
+                    suite=suite
+                )
+            )
+            checkpoint = context.checkpoints.add(
+                gx.Checkpoint(
+                    name="stock_data_checkpoint",
+                    validation_definitions=[validation_definition],
+                    result_format="SUMMARY"
+                )
+            )
+            checkpoint_result = checkpoint.run(
+                batch_parameters={"dataframe": data}
+            )
+            validation_status = bool(checkpoint_result.success)
+            context.build_data_docs()
+            # results = batch.validate(suite)
+            # validation_status = bool(results.success)
             self._write_status(validation_status)
             if validation_status:
                 logger.info(f"Validation passed")

@@ -1,0 +1,12 @@
+{
+  "actions": [],
+  "id": "d142eb2f-8534-408e-93b8-c543fbf2cc03",
+  "name": "stock_data_checkpoint",
+  "result_format": "SUMMARY",
+  "validation_definitions": [
+    {
+      "id": "279a1fc7-5241-4bb2-9c18-57005abc9033",
+      "name": "stock_data_validation_definition"
+    }
+  ]
+}
