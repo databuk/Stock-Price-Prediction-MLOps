@@ -1,8 +1,7 @@
 columns:
-  Date: datetime64[ns]
-  Open: float64
-  High: float64
-  Low: float64
-  Close: float64
-  Volume: int64
+  open: float64
+  high: float64
+  low: float64
+  close: float64
+  volume: int64
 

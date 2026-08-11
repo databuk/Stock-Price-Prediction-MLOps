@@ -21,7 +21,7 @@ class DataIngestion:
             logger.info(f"Data downloaded successfully for ticker: {self.config.ticker} from \
                 {self.config.start_date} to {self.config.end_date}")
             if not (data.empty):
-                data = self.reset_columns(data)           
+                data = self._preprocesss(data)          
                 save_csv(data, self.config.raw_data_file)
 
             else:
@@ -35,8 +35,10 @@ class DataIngestion:
 
         
         
-    def reset_columns(self, data: pd.DataFrame) -> pd.DataFrame:
+    def _preprocesss(self, data: pd.DataFrame) -> pd.DataFrame:
         if isinstance(data.columns, pd.MultiIndex):
             data.columns = data.columns.droplevel(1)
         data = data.reset_index()
+        # data = pd.read_csv(data, parse_dates="Date")
+        data.columns = data.columns.str.lower() 
         return data

@@ -1,15 +1,15 @@
 {
   "expectations": [
     {
-      "id": "f7ab1d2c-3873-4a44-b124-c0d74fc080bc",
+      "id": "93e294e5-3790-4af3-be2c-2ae8a0bd37e6",
       "kwargs": {
         "column_set": [
-          "Date",
-          "Close",
-          "High",
-          "Low",
-          "Open",
-          "Volume"
+          "date",
+          "close",
+          "high",
+          "low",
+          "open",
+          "volume"
         ]
       },
       "meta": {},
@@ -17,63 +17,63 @@
       "type": "expect_table_columns_to_match_set"
     },
     {
-      "id": "da253a47-5767-407d-8341-a1fccf97c535",
+      "id": "79f11033-9d44-46d0-aecc-7589891de735",
       "kwargs": {
-        "column": "Date"
+        "column": "date"
       },
       "meta": {},
       "severity": "critical",
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "4338dce3-f006-4f0d-8203-c39384321c55",
+      "id": "4e5f4cb3-34a0-4351-8068-28d3138ab8ef",
       "kwargs": {
-        "column": "Close"
+        "column": "close"
       },
       "meta": {},
       "severity": "critical",
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "f2fe9a7c-5c52-4140-8d44-933648ff9a9a",
+      "id": "14cdbeb4-0042-497e-aba5-c1ce559f3c73",
       "kwargs": {
-        "column": "High"
+        "column": "high"
       },
       "meta": {},
       "severity": "critical",
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "b699c918-166b-4efb-b08c-8bb96eabe175",
+      "id": "0f3c5b75-d509-4695-afa3-bc00b8f85a22",
       "kwargs": {
-        "column": "Low"
+        "column": "low"
       },
       "meta": {},
       "severity": "critical",
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "06d24e4c-324a-4509-9c97-a1deaaece1ec",
+      "id": "d5f9f643-d0dc-4210-88f0-5c5f1bedaf55",
       "kwargs": {
-        "column": "Open"
+        "column": "open"
       },
       "meta": {},
       "severity": "critical",
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "0d435032-0283-4aa3-9637-333df195b5e9",
+      "id": "7ec65dcd-da10-4b1d-8b20-e5c14c86c210",
       "kwargs": {
-        "column": "Volume"
+        "column": "volume"
       },
       "meta": {},
       "severity": "critical",
       "type": "expect_column_values_to_not_be_null"
     },
     {
-      "id": "bfc368d6-063d-4a9e-8cce-000d079df5e4",
+      "id": "4da4fa04-68c6-4bdc-905d-5716ec88e727",
       "kwargs": {
-        "column": "Close",
+        "column": "close",
         "min_value": 0.0
       },
       "meta": {},
@@ -81,9 +81,9 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "8bc6f32c-dca0-4c47-bcd8-8e3172491050",
+      "id": "f5af1b79-ecec-41c2-ac0d-fbb91f3dc6da",
       "kwargs": {
-        "column": "High",
+        "column": "high",
         "min_value": 0.0
       },
       "meta": {},
@@ -91,9 +91,9 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "aac9298d-b348-43a7-ac2f-962027f09f66",
+      "id": "3c20e625-e9e7-4c8e-aa5c-250dde55dd25",
       "kwargs": {
-        "column": "Low",
+        "column": "low",
         "min_value": 0.0
       },
       "meta": {},
@@ -101,9 +101,9 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "69a19654-d15a-4353-804c-df19b3d9e164",
+      "id": "d69d7938-f2a6-42c5-b145-c72682dd0779",
       "kwargs": {
-        "column": "Open",
+        "column": "open",
         "min_value": 0.0
       },
       "meta": {},
@@ -111,9 +111,9 @@
       "type": "expect_column_values_to_be_between"
     },
     {
-      "id": "37d61e3c-4177-4c7d-8f09-2b8819b7ab62",
+      "id": "b1aff455-b71d-4857-89f7-d836dee7d72c",
       "kwargs": {
-        "column": "Volume",
+        "column": "volume",
         "min_value": 0.0
       },
       "meta": {},

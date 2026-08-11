@@ -18,3 +18,12 @@ class DataValidationConfig:
     status_file: Path
     ge_expectation_suite: str
     all_schema: dict
+    
+    
+@dataclass()
+class DataTransformationConfig:
+    root_dir: Path
+    raw_data_file: Path
+    test_size: float
+    target_column: str
+    date_column: str

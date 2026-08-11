@@ -1,2 +1,4 @@
-key:
-  val
+ARIMA:
+  p: 5
+  d: 2
+  q: 0

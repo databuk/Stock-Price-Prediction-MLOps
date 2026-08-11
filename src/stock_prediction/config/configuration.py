@@ -36,3 +36,15 @@ class ConfigurationManager:
             all_schema=schema
         )
         return data_validation_config
+
+    def get_data_transformation_config(self):
+        config = self.config.data_transformation
+        create_directories([config.root_dir])
+        data_transformation_config =  DataTransformationConfig(
+            root_dir=config.root_dir,
+            raw_data_file=config.raw_data_file,
+            test_size=config.test_size,
+            target_column=config.target_column,
+            date_column=config.date_column
+        )
+        return data_transformation_config
