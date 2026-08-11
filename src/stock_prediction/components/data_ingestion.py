@@ -25,9 +25,9 @@ class DataIngestion:
                 save_csv(data, self.config.raw_data_file)
 
             else:
-                logger.error(f"No data found for ticker: {self.config.ticker} from \
+                logger.error(f"Empty data found for ticker: {self.config.ticker} from \
                     {self.config.start_date} to {self.config.end_date}") 
-                raise ValueError(f"No data found for ticker: {self.config.ticker} from \
+                raise ValueError(f"Empty data found for ticker: {self.config.ticker} from \
                     {self.config.start_date} to {self.config.end_date}")
         except Exception as e:
             logger.error(f"Error while downloading data for ticker: {self.config.ticker} ")

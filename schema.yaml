@@ -4,4 +4,8 @@ columns:
   low: float64
   close: float64
   volume: int64
+date_column:
+  date
+target_column:
+  name: close 
 

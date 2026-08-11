@@ -27,3 +27,17 @@ class DataTransformationConfig:
     test_size: float
     target_column: str
     date_column: str
+    
+
+
+@dataclass()
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    target_column: str
+    date_column: str
+    model_name: str
+    order: list
+ 
+    
