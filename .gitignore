@@ -223,3 +223,6 @@ artifacts/data_ingestion/stock_data.csv
 README.md
 combined_code.py
 all_code_combined.txt
+mlflow.db
+mlruns
+artifacts/model_trainer
