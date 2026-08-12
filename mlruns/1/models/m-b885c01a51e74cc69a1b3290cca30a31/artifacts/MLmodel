@@ -1,0 +1,20 @@
+artifact_path: file:///C:/Users/Ibk/Desktop/data project/Stock-Price-Prediction-MLOps/mlruns/1/models/m-b885c01a51e74cc69a1b3290cca30a31/artifacts
+flavors:
+  python_function:
+    data: model.statsmodels
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.statsmodels
+    python_version: 3.12.5
+  statsmodels:
+    code: null
+    data: model.statsmodels
+    statsmodels_version: 0.14.6
+mlflow_version: 3.15.1
+model_id: m-b885c01a51e74cc69a1b3290cca30a31
+model_size_bytes: 73292032
+model_uuid: m-b885c01a51e74cc69a1b3290cca30a31
+prompts: null
+run_id: ec926453e9da4661833ddef1e2bb124c
+utc_time_created: '2026-08-12 05:42:30.441431'

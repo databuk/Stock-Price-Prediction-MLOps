@@ -1,6 +1,9 @@
 from stock_prediction.constants import *
-from src.stock_prediction.utils.common import *
-from src.stock_prediction.entity.config_entity import *
+from stock_prediction.utils.common import *
+from stock_prediction.entity.config_entity import *
+import os
+from dotenv import load_dotenv
+mlflow_tracking_uri = load_dotenv("MLFLOW_TRACKING_URI")
 
 
 class ConfigurationManager:
@@ -43,7 +46,7 @@ class ConfigurationManager:
         data_transformation_config =  DataTransformationConfig(
             root_dir=config.root_dir,
             raw_data_file=config.raw_data_file,
-            test_size=config.test_size,
+            split_date=config.split_date,
             target_column=config.target_column,
             date_column=config.date_column
         )
@@ -64,3 +67,18 @@ class ConfigurationManager:
             
         )
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        create_directories([config.root_dir])
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            metric_file_path=config.metric_file_path,
+            params=self.params.ARIMA.order,
+            date_column=self.schema.date_column,
+            mlflow_tracking_uri=config.mlflow_tracking_uri
+            
+        )
+        return model_evaluation_config

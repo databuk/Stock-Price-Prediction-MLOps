@@ -18,5 +18,8 @@ logging.basicConfig(
         logging.StreamHandler(sys.stdout)
     ]
 )
+for noisy_logger in ["great_expectations", "urllib3", "boto3", "botocore", "marshmallow"]:
+    logging.getLogger(noisy_logger).setLevel(logging.WARNING)
+
 
 logger = logging.getLogger("projectLogger")

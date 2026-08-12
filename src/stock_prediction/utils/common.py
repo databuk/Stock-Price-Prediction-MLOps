@@ -109,8 +109,8 @@ def save_bin(data: object, path: Path):
         logger.error(f"Error saving binary file at {path}: {e}")
         raise e
 
-@ensure_annotations
-def load_bin(path: Path) -> BaseEstimator:
+#@ensure_annotations
+def load_bin(path: Path) -> Any:
     """
     Loads a binary file using joblib and returns the data.
     Args:

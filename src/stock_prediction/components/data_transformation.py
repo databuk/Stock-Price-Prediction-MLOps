@@ -7,12 +7,14 @@ class DataTransformation:
     def __init__(self, config:DataTransformationConfig):
         self.config = config
     def split_data(self):
-        data = pd.read_csv(self.config.raw_data_file)
+        data = pd.read_csv(self.config.raw_data_file, parse_dates=[self.config.date_column])
         data = data.set_index(self.config.date_column)
         data = data[self.config.target_column]
-        train_size = int(len(data) * self.config.test_size)
-        train_data = data[:train_size]
-        test_data = data[train_size:]
+        train_data = data.loc[:self.config.split_date]
+        test_data = data.loc[self.config.split_date + pd.Timedelta(days=1):]
+        # train_size = int(len(data) * self.config.test_size)
+        # train_data = data[:train_size]
+        # test_data = data[train_size:]
         
         assert train_data.index.max() < test_data.index.min(), \
             "Data leakage detected, train/test split overlap"

@@ -14,9 +14,9 @@ class ModelTrainer:
   
       arima_model = ARIMA(train, order=self.config.order)
       logger.info("Model training complete")
-      # arima_model.fit()
+      arima_result = arima_model.fit()
       model_path =  Path(self.config.root_dir) / self.config.model_name
-      save_bin(arima_model, model_path)
+      save_bin(arima_result, model_path)
       logger.info(f"Arima model saved to {model_path}")
       return arima_model
       

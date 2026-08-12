@@ -24,7 +24,7 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     raw_data_file: Path
-    test_size: float
+    split_date: str
     target_column: str
     date_column: str
     
@@ -40,4 +40,15 @@ class ModelTrainerConfig:
     model_name: str
     order: list
  
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    metric_file_path: Path
+    date_column: str
+    params: list
+    mlflow_tracking_uri: str
+    
+    
     
