@@ -1,0 +1,11 @@
+pandas
+mlflow
+scikit-learn
+statsmodels
+python-box==6.0.2
+pyYAML
+ensure
+joblib
+yfinance
+great_expectations
+python-dotenv

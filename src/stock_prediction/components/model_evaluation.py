@@ -22,7 +22,7 @@ class ModelEvaluation:
   
         mlflow.set_tracking_uri(self.config.mlflow_tracking_uri)
         
-        mlflow.set_experiment("stock-arima-forcasting")
+        mlflow.set_experiment("stock-arima-prediction")
 
         tracking_uri_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
