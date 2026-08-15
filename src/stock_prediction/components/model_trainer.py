@@ -11,6 +11,8 @@ class ModelTrainer:
       train_df = pd.read_csv(self.config.train_data_path, parse_dates=[self.config.date_column])
       
       train = train_df.set_index(self.config.date_column)[self.config.target_column]
+      train = train.asfreq("B").ffill()
+    
   
       arima_model = ARIMA(train, order=self.config.order)
       logger.info("Model training complete")
