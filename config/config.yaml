@@ -34,7 +34,8 @@ model_evaluation:
   test_data_path: artifacts/data_transformation/test.csv
   model_path: artifacts/model_trainer/arima.joblib
   metric_file_path: artifacts/model_evaluation/metric.json
-  mlflow_tracking_uri: sqlite:///mlflow.db
+  mlflow_tracking_uri: http://127.0.0.1:5000
+  # sqlite:///mlflow.db
 
 
 
